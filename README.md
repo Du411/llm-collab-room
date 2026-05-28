@@ -3,6 +3,48 @@ A multi-LLM platform where different models discuss a problem to reach a final a
 
 ---
 
+## FastAPI Hello World API
+
+此專案提供一個最小可執行的 FastAPI API，作為後續 multi-LLM chat room 服務的應用程式入口。
+
+### 1. 本機執行
+
+安裝相依套件：
+```bash
+pip install -r requirements.txt
+```
+
+啟動 API：
+```bash
+uvicorn app.main:app --reload
+```
+
+啟動後可用以下端點確認服務狀態：
+```text
+GET http://localhost:8000/
+GET http://localhost:8000/health
+```
+
+### 2. 使用 Docker 建立映像檔
+
+```bash
+docker build -t llm-collab-room-api .
+```
+
+### 3. 使用 Docker 執行 API
+
+```bash
+docker run --rm -p 8000:8000 llm-collab-room-api
+```
+
+執行後可開啟：
+```text
+http://localhost:8000/
+http://localhost:8000/docs
+```
+
+---
+
 ## 本機 MongoDB 啟動與操作指南 (Docker)
 
 為了在本機開發並儲存與 LLM 的對話紀錄，我們使用 Docker 來快速啟動本機的 MongoDB 資料庫。
